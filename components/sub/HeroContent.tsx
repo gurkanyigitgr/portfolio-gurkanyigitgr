@@ -13,21 +13,21 @@ export default function HeroContent() {
     <motion.div
       initial='hidden'
       animate='visible'
-      className='flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]'
+      className='container mx-auto flex flex-col items-center justify-center h-full w-full z-[20] mt-40 md:mt-0 md:flex-row '
     >
-      <div className='h-full w-full flex flex-col gap-5 justify-center m-auto text-start'>
+      <div className='h-full w-full flex flex-col gap-5 justify-center m-auto text-start px-3 md:py-0'>
         <motion.div
           variants={slideInFromTop}
-          className='welcome-box py-[10px] px-[4px] opacity-[0.9] cursor-pointer '
+          className='welcome-box py-[10px] px-[4px] opacity-[0.9] cursor-pointer'
         >
           <SparklesIcon className='text-white mr-[10px] ml-2 h-5 w-5 animate-pulse' />
-          <h1 className='welcome-text text-[14px] font-bold mr-2'>
+          <h1 className='welcome-text text-sm font-bold mr-2 md:text-[14px]'>
             Full-Stack Developer Portfolio
           </h1>
         </motion.div>
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className='flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto'
+          className='flex flex-col gap-6 mt-6 text-5xl font-bold text-white max-w-[600px] w-auto h-auto md:text-6xl '
         >
           <span>
             Providing
@@ -56,13 +56,14 @@ export default function HeroContent() {
       </div>
       <motion.div
         variants={slideInFromRight(0.8)}
-        className='w-full h-full flex justify-center items-center'
+        className='flex justify-center items-center mt-10 md:mt-0'
       >
         <Image
-          src='/mainIconsdark.svg'
+          className='h-[300px] w-[300px] md:h-[700px] md:w-[700px] md:block'
+          src='/header-img.svg'
           alt='work icons'
-          height={500}
-          width={500}
+          height={700}
+          width={700}
         />
       </motion.div>
     </motion.div>
