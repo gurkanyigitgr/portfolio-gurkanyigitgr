@@ -35,7 +35,8 @@ const TAB_DATA = [
     content: (
       <div className='flex flex-col md:space-y-1'>
         <p>
-          Software Engineering Master's Degree - Bandırma 17 Eylül University
+          Software Engineering Master&apos;s Degree - Bandırma 17 Eylül
+          University
         </p>
       </div>
     ),
@@ -46,7 +47,7 @@ const TAB_DATA = [
     content: (
       <div className='flex flex-col md:space-y-1'>
         <p>The Complete 2022 Web Development Bootcamp, Angela Yu</p>
-        <p>Modern HTML & CSS From The Beginning, Brad Traversy</p>
+        <p>Modern HTML &amp; CSS From The Beginning, Brad Traversy</p>
         <p>Advanced CSS and Sass, Jonas Schmedtmann</p>
         <p>The Complete JavaScript Course 2022, Jonas Schmedtmann</p>
       </div>
