@@ -35,13 +35,13 @@ const EmailSection = () => {
     >
       <div className='z-10'>
         <h2 className='text-5xl md:text-6xl text-transparent bg-clip-text font-bold bg-gradient-to-r from-[#124ae2] to-cyan-400 mb-4 '>
-          Let&apos;s Connect
+          Let's Connect
         </h2>
         <p className='text-[#ADB7BE] mb-4 max-w-md'>
           {' '}
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
+          I'm currently looking for new opportunities, my inbox is always open.
+          Whether you have a question or just want to say hi, I'll try my best
+          to get back to you!
         </p>
         <div className='socials flex flex-row gap-2'>
           <a href='https://github.com/gurkanyigitgr' target='_blank'>
