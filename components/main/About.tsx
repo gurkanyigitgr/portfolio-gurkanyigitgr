@@ -35,8 +35,7 @@ const TAB_DATA = [
     content: (
       <div className='flex flex-col md:space-y-1'>
         <p>
-          Software Engineering Master&apos;s Degree - Bandırma 17 Eylül
-          University
+          Software Engineering Master&apos;s Degree Bandırma 17 Eylül University
         </p>
       </div>
     ),
@@ -58,7 +57,7 @@ const TAB_DATA = [
     id: 'certifications',
     content: (
       <div className='flex flex-col md:space-y-1'>
-        <p>Re:Coded Turkey Frontend Bootcamp</p>
+        <p>ReCoded Turkey Frontend Bootcamp</p>
         <p>Trendyol Backend Bootcamp</p>
       </div>
     ),
