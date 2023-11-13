@@ -35,7 +35,7 @@ const EmailSection = () => {
     >
       <div className='z-10'>
         <h2 className='text-5xl md:text-6xl text-transparent bg-clip-text font-bold bg-gradient-to-r from-[#124ae2] to-cyan-400 mb-4 '>
-          Let's Connect
+          Let&apos;s Connect
         </h2>
         <p className='text-[#ADB7BE] mb-4 max-w-md'>
           {' '}

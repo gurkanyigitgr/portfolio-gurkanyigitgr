@@ -22,7 +22,7 @@ export default function HeroContent() {
         >
           <SparklesIcon className='text-white mr-[10px] ml-2 h-5 w-5 animate-pulse' />
           <h1 className='welcome-text text-sm font-bold mr-2 md:text-[14px]'>
-            Full-Stack Developer Portfolio
+            Full Stack Developer Portfolio
           </h1>
         </motion.div>
         <motion.div
