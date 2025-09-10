@@ -1,21 +1,6 @@
-import About from '@/components/main/About';
-import EmailSection from '@/components/main/EmailSection';
-import Footer from '@/components/main/Footer';
-import Hero from '@/components/main/Hero';
-import Projects from '@/components/main/Projects';
-import Skills from '@/components/main/Skills';
+import { redirect } from "next/navigation";
+import { defaultLanguage } from "@/lib/i18n";
 
-export default function Home() {
-  return (
-    <main className='h-full w-full'>
-      <div className='flex flex-col gap-20'>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <EmailSection />
-        <Footer />
-      </div>
-    </main>
-  );
+export default function RootPage() {
+  redirect(`/${defaultLanguage}`);
 }

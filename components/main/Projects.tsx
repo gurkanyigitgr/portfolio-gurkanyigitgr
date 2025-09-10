@@ -1,63 +1,66 @@
-import React from 'react';
-import ProjectCard from '../sub/ProjectCard';
+"use client";
 
-const Projects = () => {
+import React from "react";
+import { Language, translations } from "@/lib/i18n";
+import {
+  DocumentArrowDownIcon,
+  CheckCircleIcon,
+} from "@heroicons/react/24/outline";
+
+const CVDownload = ({ lang }: { lang: Language }) => {
+  const t = translations[lang];
+
   return (
-    <div
-      className='container m-auto flex flex-col flex-wrap items-center justify-center'
-      id='projects'
+    <section
+      className="container m-auto flex flex-col items-center justify-center py-20"
+      id="cv"
     >
-      <h2 className='text-5xl md:text-6xl text-transparent bg-clip-text font-bold bg-gradient-to-r from-[#124ae2] to-cyan-400 mb-16 md:mb-20'>
-        My Projects
+      <h2 className="text-5xl md:text-6xl text-transparent bg-clip-text font-bold bg-gradient-to-r from-[#124ae2] to-cyan-400 mb-8 text-center">
+        {t.cvTitle}
       </h2>
-      <div className='h-full w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-10'>
-        <a
-          href='https://github.com/gurkanyigitgr/discord-clone'
-          target='_blank'
-        >
-          <ProjectCard
-            src='/project3.png'
-            title='Discord Clone'
-            description='A real-time communication platform enabling instant messaging, video calls, and file sharing. Features include user management, invitation system, aesthetic UI with TailwindCSS and ShadcnUI, database management using Prisma and MySQL, and authentication with Clerk.'
-          />
-        </a>
-        <a
-          href='https://github.com/gurkanyigitgr/kardesler_steakhouse'
-          target='_blank'
-        >
-          <ProjectCard
-            src='/project2.png'
-            title='Kardesler Steakhouse'
-            description='The Kardeşler Steakhouse website was developed by me using Next.js and Tailwind CSS. It offers a delightful digital experience with a minimalist design and user-friendly interface.'
-          />
-        </a>
-        <a
-          href='https://github.com/gurkanyigitgr/crowdfunding-app-team-9'
-          target='_blank'
-        >
-          <ProjectCard
-            src='/project1.png'
-            title='Givingly'
-            description='This project aims to create a robust crowdfunding platform that connects passionate individuals and innovative projects with a community of potential backers.'
-          />
-        </a>
-        <a href='https://github.com/gurkanyigitgr/BankistApp' target='_blank'>
-          <ProjectCard
-            src='/project4.png'
-            title='Bankist'
-            description='This project simulates simple banking operations such as tracking account balances, making money transfers, and viewing transaction history using a modern web browser.'
-          />
-        </a>
-        <a href='http://www.dtmustafaakyilmaz.com/' target='_blank'>
-          <ProjectCard
-            src='/project5.png'
-            title='Dt.Mustafa Akyılmaz'
-            description='This project aims to create a robust crowdfunding platform that connects passionate individuals and innovative projects with a community of potential backers.'
-          />
-        </a>
+
+      <p className="text-gray-300 text-center max-w-2xl mx-auto text-lg mb-12">
+        {t.cvDescription}
+      </p>
+
+      <div className="max-w-md w-full px-4">
+        <div className="bg-transparent border border-gray-700 rounded-xl p-8 hover:border-cyan-400 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+          <div className="flex flex-col items-center space-y-6">
+            <div className="w-20 h-20 bg-gradient-to-r from-[#124ae2] to-cyan-400 rounded-full flex items-center justify-center">
+              <DocumentArrowDownIcon className="w-10 h-10 text-white" />
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-white mb-6">CV</h3>
+              <a
+                href="/cv-gurkan-yigit.pdf"
+                download="cv-gurkan-yigit.pdf"
+                className="bg-gradient-to-r from-[#124ae2] to-cyan-400 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-3 mx-auto text-lg font-medium"
+              >
+                <DocumentArrowDownIcon className="w-6 h-6" />
+                {t.downloadButton}
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div className="mt-16 max-w-3xl mx-auto px-4">
+        <h3 className="text-2xl font-bold text-white text-center mb-8">
+          {t.whatYouWillFind}
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {t.cvFeatures.map((feature, index) => (
+            <div key={index} className="flex items-center space-x-3">
+              <CheckCircleIcon className="w-6 h-6 text-cyan-400 flex-shrink-0" />
+              <span className="text-gray-300">{feature}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default Projects;
+export default CVDownload;

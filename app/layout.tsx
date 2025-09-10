@@ -1,28 +1,30 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import StarsCanvas from '@/components/main/StarBackground';
-import Navbar from '@/components/main/Navbar';
+"use client";
 
-const inter = Inter({ subsets: ['latin'] });
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import StarsCanvas from "@/components/main/StarBackground";
+import Navbar from "@/components/main/Navbar";
+import { usePathname } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: 'Gürkan Yiğit',
-  description: 'This is my portfolio',
-};
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const rawLang = pathname?.split("/")[1];
+  const lang = rawLang === "en" ? "en" : "tr";
+
   return (
-    <html lang='en'>
+    <html lang={lang}>
       <body
         className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
         <StarsCanvas />
-        <Navbar />
+        <Navbar lang={lang} />
         {children}
       </body>
     </html>

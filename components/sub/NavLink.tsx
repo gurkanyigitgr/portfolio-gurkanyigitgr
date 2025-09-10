@@ -1,16 +1,48 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 interface NavLinkProps {
   href: string;
   title: string;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, title }) => {
+const NavLink = ({ href, title }: NavLinkProps) => {
+  const pathname = usePathname();
+
+  const currentLang = pathname?.split("/")[1] || "tr";
+
+  if (href.startsWith("#")) {
+    if (pathname?.includes("/blog")) {
+      const homeWithAnchor = `/${currentLang}${href}`;
+      return (
+        <Link
+          href={homeWithAnchor}
+          className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white"
+        >
+          {title}
+        </Link>
+      );
+    } else {
+      return (
+        <a
+          href={href}
+          className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white"
+        >
+          {title}
+        </a>
+      );
+    }
+  }
+
   return (
-    <a
+    <Link
       href={href}
-      className='cursor-pointer block py-2 pl-3 pr-4 text-[#fff] sm:text-lg rounded md:p-0 hover:text-cyan-500'
+      className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white"
     >
       {title}
-    </a>
+    </Link>
   );
 };
 
